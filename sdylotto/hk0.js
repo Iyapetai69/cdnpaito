@@ -16,7 +16,7 @@ $(function () {
     // Tombol Clear dan bangun ulang grid
     $("#clear").click(function () {
 	$(".color").removeClass('selected');
-        $("#paitotable tbody td").removeAttr('style').removeClass(["rek", "rke", "rko", "ras"]);
+        $("#drawing-table tbody td").removeAttr('style').removeClass(["rek", "rke", "rko", "ras"]);
         $("#vas, #vko, #vke, #vek").val("");
 	var size = $("#gridSize").val().split(",");
         var rows = size[0];
