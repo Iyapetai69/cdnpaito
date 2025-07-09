@@ -116,59 +116,62 @@ function myFunction() {
 
 // Input kombinasi angka
 $(function () {
-    $('#ekorc').keyup(function () {
-        $('.asu:nth-child(5n+4)').each(function () {
-            var val = $('#ekorc').val().trim();
-            var text = $(this).text();
-
-            if (val.length) {
-                if (text === val) $(this).addClass("e" + text);
-            } else {
-                $(this).removeClass("e" + text);
-            }
-        });
-    });
-
-    $('#kepalac').keyup(function () {
-        $('.asu:nth-child(5n+3)').each(function () {
-            var val = $('#kepalac').val().trim();
-            var text = $(this).text();
-
-            if (val.length) {
-                if (text === val) $(this).addClass("k" + text);
-            } else {
-                $(this).removeClass("k" + text);
-            }
-        });
-    });
-
-    $('#kopc').keyup(function () {
-        $('.asu:nth-child(5n+2)').each(function () {
-            var val = $('#kopc').val().trim();
-            var text = $(this).text();
-
-            if (val.length) {
-                if (text === val) $(this).addClass("c" + text);
-            } else {
-                $(this).removeClass("c" + text);
-            }
-        });
-    });
-
-    $('#asc').keyup(function () {
-        $('.asu:nth-child(5n+1)').each(function () {
-            var val = $('#asc').val().trim();
-            var text = $(this).text();
-
-            if (val.length) {
-                if (text === val) $(this).addClass("a" + text);
-            } else {
-                $(this).removeClass("a" + text);
-            }
-        });
-    });
+   	$('#vas').change(function () {
+		$('.asu:nth-last-child(5n+5)').each(function () {
+			if ($.trim($('#vas').find("option:selected").val()).length) {
+				var r = $(this).text();
+				var t = $("#vas").find("option:selected").val(); 	
+				if (r == t ) {
+					$(this).addClass("ras");
+				}
+			 }				
+		});
+	});
+	$('#vko').change(function () {
+		$('.asu:nth-last-child(5n+4)').each(function () {
+			if ($.trim($('#vko').find("option:selected").val()).length) {
+				var r = $(this).text();
+				var t = $("#vko").find("option:selected").val(); 	
+				if (r == t ) {
+					$(this).addClass("rko");
+				}
+			 }				
+		});
+	});
+	$('#vke').change(function () {
+		$('.asu:nth-last-child(5n+3)').each(function () {
+			if ($.trim($('#vke').find("option:selected").val()).length) {
+				var r = $(this).text();
+				var t = $("#vke").find("option:selected").val(); 	
+				if (r == t ) {
+					$(this).addClass("rke");
+				}
+			 }				
+		});
+	});
+	$('#vek').change(function () {
+		$('.asu:nth-last-child(5n+2)').each(function () {
+			if ($.trim($('#vek').find("option:selected").val()).length) {
+				var r = $(this).text();
+				var t = $("#vek").find("option:selected").val(); 	
+				if (r == t ) {
+					$(this).addClass("rek");
+				}
+			 }				
+		});
+	});
+	$('#vd').change(function () {
+		$('.asux').each(function () {
+			if ($.trim($('#vd').find("option:selected").val()).length) {
+				var r = $(this).text();
+				var t = $("#vd").find("option:selected").val(); 	
+				if (r == t ) {
+					$(this).addClass("rd");
+				}
+			 }				
+		});
+	});
 });
-
 // Sticky colormenu + select redirect
 jQuery(function ($) {
     $("#colormenu")
